@@ -1,5 +1,27 @@
 import gradio as gr
 from huggingface_hub import InferenceClient
+from unsloth import FastLanguageModel
+from transformers import TextStreamer
+
+model = 1
+tokenizer = 1
+
+FastLanguageModel.for_inference(model) # Enable native 2x faster inference
+
+messages = [
+    {"role": "user", "content": "Continue the fibonnaci sequence: 1, 1, 2, 3, 5, 8,"},
+]
+inputs = tokenizer.apply_chat_template(
+    messages,
+    tokenize = True,
+    add_generation_prompt = True, # Must add for generation
+    return_tensors = "pt",
+).to("cuda")
+
+
+text_streamer = TextStreamer(tokenizer, skip_prompt = True)
+_ = model.generate(input_ids = inputs, streamer = text_streamer, max_new_tokens = 128,
+                   use_cache = True, temperature = 1.5, min_p = 0.1)
 
 """
 For more information on `huggingface_hub` Inference API support, please check the docs: https://huggingface.co/docs/huggingface_hub/v0.22.2/en/guides/inference
