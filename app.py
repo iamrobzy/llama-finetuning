@@ -8,8 +8,8 @@ llm = Llama.from_pretrained(
 )
 
 llm2 = Llama.from_pretrained(
-    repo_id="Robzy/Llama-3.2-1B-Instruct-Finetuned-16bit",
-    filename="unsloth.F16.gguf",
+    repo_id="Robzy/Llama-3.2-1B-Instruct-Finetuned-CodeData-q4_k_m",
+    filename="unsloth.Q4_K_M.gguf",
 )
 
 # Define prediction functions
