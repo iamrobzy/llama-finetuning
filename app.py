@@ -87,8 +87,7 @@ chat_interfaces = {"4-bit": io1, "5-bit": io2, "8-bit": io3}
 
 # Define UI
 with gr.Blocks() as demo:
-    gr.Markdown("# Quantized Llama Comparison for Code Generation")
-  
+    gr.Markdown("# Quantized Llama Comparison for Code Generation")\  
     with gr.Tab("4-bit"):
         io1.render()
     with gr.Tab("5-bit"):
