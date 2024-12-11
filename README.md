@@ -27,6 +27,15 @@ pinned: false
 * We also finetuned the model on a larger dataset for code generation: iamtarun/code_instructions_120k_alpaca
 * We saved the model in different quantized forms: "q4_k_m", "q8_0", "q5_k_m"
 
+**Hyperparameters**
+* num_train_epochs = 1
+* save_steps=10 
+* max_steps = 0
+* learning_rate = 2e-4,
+* logging_steps = 1,
+* weight_decay = 0.01,
+* lr_scheduler_type = "linear",
+
 **Datasets**:
 * [Code instructions Alpaca 18k](https://huggingface.co/datasets/iamtarun/python_code_instructions_18k_alpaca)
 * [Code instructions Alpaca 120k](https://huggingface.co/datasets/iamtarun/code_instructions_120k_alpaca)
