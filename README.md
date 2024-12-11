@@ -9,7 +9,6 @@ app_file: app.py
 pinned: false
 ---
 
-An example chatbot using [Gradio](https://gradio.app), [`huggingface_hub`](https://huggingface.co/docs/huggingface_hub/v0.22.2/en/index), and the [Hugging Face Inference API](https://huggingface.co/docs/api-inference/index).
 
 ### [HuggingFace Space with Quantized LLMs](https://huggingface.co/spaces/Robzy/llm)
 
@@ -21,6 +20,7 @@ An example chatbot using [Gradio](https://gradio.app), [`huggingface_hub`](https
 * Weight & Biases for model training monitoring and model checkpointing. Checkpointing every 10 steps.
 
 **Finetuning details**
+* Data centric approach: 
 
 **Datasets**:
 * [Code instructions Alpaca 120k](https://huggingface.co/datasets/iamtarun/code_instructions_120k_alpaca)
